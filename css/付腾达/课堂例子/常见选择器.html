@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见选择器</title>
+    <style type="text/css">
+        /* 
+        元素选择器
+            作用:可选择指定元素
+            语法:标签名 {}
+        */
+        /* 
+        id选择器
+            作用:选择id属性值只能有一个
+            语法:#id名 {} 
+        */
+        /* 
+        类选择器
+            作用:选择class属性值可以有多个一组
+            可以为一个元素设置多个class属性值
+            语法:.class{} 
+        */
+        p {
+            color: blueviolet;
+        }
+
+        #p1 {
+            color: blue;
+        }
+
+        .p2 {
+            font-size: x-large;
+        }
+
+        .hello {
+            font-weight: bolder;
+        }
+
+        /* 
+        题目:为id为p1的、class为p2的、h1的元素同时设置背景颜色为黄色
+        做法:
+            选择器分组(并集选择器):选择器分组可以同时选中多个选择器对应的元素 
+            语法:#id名, .class名,元素标签名{}
+        */
+        #p1,
+        .p2,
+        h1 {
+            background-color: yellow;
+        }
+
+        /* 
+        通配选择器
+            作用:选则页面所有的元素
+            语法:*{} 
+        */
+        /* 
+        题目:为有class为p3的span标签元素设置背景元素为red
+        做法:符合选择器(交集选择器),对于类选择器来说建议使用,id选择器不建议使用
+            语法:选择器1选择器2选择器3{}
+            选择器顺序先元素标签,再class选择器 
+        */
+        span.p3 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>悯农</h1>
+    <p>你好,锄禾</p>
+    <p id="p1">你好,锄禾</p>
+    <p class="p2">你好,锄禾</p>
+    <p class="p2 hello">你好,锄禾</p>
+    <p class="p2">你好,锄禾</p>
+    <p class="p3">你好,锄禾</p>
+    <span class="p3">汗滴禾下土</span>
+</body>
+
+</html>

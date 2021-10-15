@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 90%;
+            height: 300px;
+            background-color: pink;
+            /*  设置布局属性 */
+            display: flex;
+            /* justify-content设置主轴上的子元素排列方式。space-around平分剩余空间 */
+            /* justify-content: space-around; */
+
+            /* 设置主轴上的子元素 从头部开始，如果主轴是x轴，则从左到右 */
+            /* justify-content: flex-start; */
+
+            /* 在主轴居中对齐，x轴则水平居中 */
+            /* justify-content: center; */
+
+            /* 设置主轴先两边贴边 再平分剩余空间【重要】 */
+            justify-content: space-between;
+
+
+
+            /* flex-direction属性决定主轴的方向  项目的排列方向 */
+            flex-direction: row;
+            /* flex-direction: column-reverse; */
+        }
+
+        span {
+            /* width: 30%; */
+            /* flex: 1; */
+            height: 200px;
+            background-color: tomato;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

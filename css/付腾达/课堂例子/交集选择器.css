@@ -1,0 +1,73 @@
+.huang,.yuan,.li{
+    width: 100px;
+    height: 200px;
+    background-color:blue;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 900;
+}
+
+/**后代选择器
+*/
+div ul li:last-child,div ul li:first-child{
+    width: 100px;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    background: red;
+}
+
+.sitenav .site-r{
+    width: max-content;
+    height: 300px;
+    font-style: italic;
+    background-color: green;
+}
+.sitenav :nth-child(1){
+    width: max-content;
+    height: 300px;
+    font-style: italic;
+    background-color: black;
+}
+
+/**
+属性选择器: 根据属性和属性值来选择标签
+用[]使用:eg:[align]{color:red}
+            [color*="aa"]{font-style:italic}
+            //color属性值中包含aa的找出来,该属性为斜体字
+            一般不用,使用类选择器多
+attr
+val
+*/
+[align]{
+    color: blueviolet;
+    width: max-content;
+    height: 300px;
+    background-color:blue;
+}
+
+
+/**
+伪类选择器:::before,::after,::first-letter//控制第一个字::first-line
+*/
+p::first-letter{
+    color: chartreuse;
+}
+p.mid{
+    text-indent: 2em;
+}
+p::first-line{
+    font-size: larger;
+}
+p::selection{
+    color: chocolate;
+}
+p::after{
+    content: attr("你是谁");
+}
+
+
+
+

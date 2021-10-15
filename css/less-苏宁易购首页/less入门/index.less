@@ -1,0 +1,40 @@
+// 定义一个粉色的变量
+@color1:rgba(89, 150, 81, 0.815);
+@color2:pink;
+@color3:red;
+// 错误的变量名 @1color @color~@#
+// 变量名区分大小写 @color 和 @Color是两个不同的变量
+
+@font12:12px; //定义了一个字体为12px的变量
+@font18:18px;
+
+
+
+body{
+    background-color: @color1;
+    
+}
+div{
+    width: 500px;
+    height: 500px;
+    font-size: @font12;
+
+    //less编译 下载easyless插件
+    //less嵌套 1、儿子直接住在less爸爸家里==>子元素直接嵌套在父元素中
+    span{
+        display: block;
+        width: 200px;
+        height: 200px;
+        color: @color2;
+        background-color: @color3;
+        font-size: @font18;
+    }
+}
+a{
+    font-size: @font12;
+
+    // 2、a链接的悬浮 hover 前面添加&
+    &:hover{
+        font-size: @font18;
+    }
+}

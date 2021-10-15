@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* flex布局下默认子元素不换行 */
+            display: flex;
+            /* flex-wrap 设置换行属性 */
+            /* flex-wrap: wrap; */
+
+            /* 设置主轴 */
+            flex-direction: column;
+
+            /* 主/侧轴元素居中 */
+            /* justify-content: center; */
+
+            /* 元素居中 */
+            align-items: center;
+
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+
+        }
+
+        div span {
+            width: 150px;
+            height: 200px;
+            background-color: chartreuse;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+
+    </div>
+</body>
+
+</html>

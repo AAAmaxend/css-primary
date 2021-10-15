@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" name="myform" id="myform">
+        <table id="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="left">您的Email：</td>
+                <td>
+                    <input id="email" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">输入密码：</td>
+                <td>
+                    <input id="pwd" type="password">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">再输入一遍密码</td>
+                <td>
+                    <input id="repwd" type="password">
+                </td>
+            </tr>
+            <tr>
+                <td>您的姓名</td>
+                <td>
+                    <input type="text" id="user">
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="sex">男
+                    <input type="radio" name="sex">女
+                </td>
+            </tr>
+            <tr>
+                <td>出生日期</td>
+                <td>
+                    <select>
+                        <option>1998</option>
+                        <option>1999</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                    </select>年
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>月
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>日
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" id="btn"></td>
+            </tr>
+        </table>
+    </form>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        $('#btn').click(function () {
+            //1、姓名不能为空，并且不能包含数字
+            //1.1、姓名不能为空
+            var username = $('#user').val();
+            if (username == '') {
+                alert('姓名不能为空');
+                return false;
+            }
+            //1.2姓名不能包含数字
+            for (var i = 0; i < username.length; i++) {
+                var IsNumber = username.substring(i, i + 1);
+                if (isNaN(IsNumber) == false) {
+                    alert("用户名不能包含数字");
+                    return false;
+                }
+            }
+
+            //2、密码不能为空，密码不能少于6位，两次输入密码必须相同
+            //2.1密码不能为空
+            var pwd = $('#repwd').val();
+            if (repwd == "") {
+                alert('密码不能为空');
+                return false;
+            }
+            //2.2密码不能少于6位
+            if (pwd.length < 6) {
+                alert('密码不能少于6位');
+                return false;
+            }
+            //2.3两次输入密码必须相同
+            var repwd = $('#repwd').val();
+            if (pwd !== repwd) {
+                alert("两次输入的密码不一致！");
+                return false;
+            }
+
+        });
+        //判断是否包含数字
+        function ISInclude_Number(un) {
+            for (var i = 0; i < un.length; i++) {
+                var IsNumber = un.substring(i, i + 1);
+                if (isNaN(IsNumber) == false) {
+                    alert("用户名不能包含数字");
+                    return false;
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

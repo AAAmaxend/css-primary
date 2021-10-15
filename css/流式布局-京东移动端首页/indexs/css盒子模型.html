@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-child(1) {
+            /* 传统盒子模型：width,height,padding */
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: 10px solid burlywood;
+            box-sizing: content-box;
+            padding: 10px;
+        }
+
+        div:nth-child(2) {
+            /* padding和border 不会再撑大盒子*/
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            padding: 10px;
+            border: 10px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <br>
+</body>
+
+</html>

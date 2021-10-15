@@ -1,0 +1,954 @@
+/* CSS样式初始化 */
+
+/* 隐藏所有内外样式距离 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    /* body的总体样式改:背景颜色,字体,字体大小 */
+    background: #f3f5f7;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;    
+} 
+
+.container{
+    /* 容器宽度共用1000px,且居中对齐 */
+    width: 1000px;
+    margin: 0 auto;
+}
+
+ul{
+    /* 菜单的ul和li,去掉前面的点 */
+    list-style: none;
+}
+
+a{
+    /* 链接去掉下面下划线 */
+    text-decoration: none;
+
+    color: #050505;
+}
+
+input{
+    border: 0;
+
+    /* 让盒子的border和padding都包含到width里面去 */
+    box-sizing: border-box;
+}
+
+.clearfix::before, .clearfix:after{
+    display:table;
+    content:' ';
+}
+.clearfix:after{
+    clear:both;
+}
+.clearfix{
+    zoom: 1;
+}
+/* CSS样式初始化结束 */
+
+
+/* 菜单样式开始 */
+header{
+    /* background-color:red; */
+    height: 80px;
+    overflow: hidden;
+}
+
+nav{
+    width: 1000px;
+    height: 40px;
+    /* background-color: #f3f5f7; 待加 */
+    margin: 26px auto;
+}
+
+.logo{
+    float: left;
+}
+
+.menu{
+    float: left;
+
+    /* menu的宽度 */
+    /* width: 220px; */
+
+    height: 40px;
+    line-height: 40px;/* 自动居中 */
+
+    margin-left: 35px;
+    /* background-color:#f4f5f7 ; */
+}
+
+.menu li{
+    float: left;
+}
+
+.menu li a{
+    padding: 0 10px;
+
+    /* a的行内元素,要占一个块,需要转换块级 */
+    display: block;
+
+    /* 块级元素都需要高度显示 */
+    height:40px ;
+}
+
+/* ...这样保证颜色都是黑色 */
+/* .menu li a:link{
+    color: black;
+}
+.menu li a:visited{
+    color: black;
+} */
+/* 还有一种方法,在初始的a标签里面 */
+
+.menu a:hover{
+    /* 悬浮效果 */
+    border-bottom:2px solid #00a3fe;
+}
+
+.search{
+    float: left;
+
+    margin-left: 35px;
+    padding: 2px;
+
+    width: 350px;
+    height: 39px;
+    background-color:#00a3fe;   
+}
+[type='text']{
+    /* 类名为input,type为text的文本框 */
+    float: left;
+
+    /* 宽度小于搜索框 */
+    width: 310px;
+    height: 39px;
+
+    border: 0;
+}
+
+.enlarge{
+    float: left;
+    width: 24px;
+    height: 25px;
+
+    padding: 6px 1px 6px 7px;
+}
+
+.login{
+    float: left;
+
+    height: 40px;
+
+    /* 登录头像上边外边距，左边距 */
+    margin-top: 5px;
+    margin-left: 35px;
+}
+
+.wenzi{
+    /* 文字做一个小div，记录宽度，长度 */
+    float: right;
+    width: 120px;
+    height: 24px;
+
+    padding-top: 10px;
+}
+/* 菜单样式结束 */
+
+
+/* banner样式开始 */
+.banner {  
+    height: 420px;
+    background:#1c036c;
+}
+
+.banner-in {
+    height: 420px;
+    /* 背景图片,居中0 0 不重复no-repeat */
+    background: url(../作业img/微信图片_20201205152224.png) 0 0 no-repeat;   
+
+    /* 定位 父元素*/
+    position: relative;
+}
+
+ .banner-left{
+    width: 190px;
+    height: 420px;
+
+    /* 背景暗灰 */
+    background:rgba(19, 18, 18, 0.3);
+
+    float: left;
+}
+
+.banner-left li a{
+    color: white;
+    font-size: 14px;
+    padding: 0 25px;
+
+    /* a转换为块元素 */
+    display: block;
+    height: 45px;
+    line-height: 45px; /*单行行高有了*/
+} 
+
+.banner-left li a:hover{
+    color:#00a3fe;
+}
+
+.banner-left li a span{
+    float: right;
+
+    /* 符号用的arial字体 */
+    font-family: arial;
+}
+
+.banner-right{
+    float: right;
+
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+
+    background-color: #ffffff;
+
+    /* 悬浮偏上 */
+    margin-top: 28px;
+} 
+
+.banner-right dt{
+    /* 长度垂直居中,长度等于行高 */
+    height: 50px;
+    line-height: 50px;
+
+    background-color: #9bceea;
+
+    /* 文字宽度居中 */
+    text-align: center;
+
+    /* 文字加粗 */
+    font-weight: 800px;
+
+    color: white;
+
+    /* 字与字的间隔 */
+    letter-spacing: 1px;
+
+    /* 给dt底外下边距,不能给dd外上边距,不然每个dd不连接会跑掉 */
+    margin-bottom: 5px;
+}
+
+.banner-right dd{
+    background-color: #ffffff;
+
+    /* 每个dd的大小 */
+    width: 160px;
+    height: 55px;
+
+    /* 居中对齐 */
+    margin: 0 auto;
+
+    /* 每个dd的底下边界出现了,边界有长度,有颜色 */
+    border-bottom:1px solid #ccc ; 
+
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+
+.banner-right dd:last-child{
+    /* 最后一个dd没有下面边界 */
+    border: 0;
+}
+
+.banner-right dd h5{
+    font-size: 14px;
+
+    /* h5是标题标签,会自动变粗,这里不要它变粗 */
+    font-weight: normal;
+
+    color: #4e4e4e;
+}
+
+.banner-right dd p{
+    color: #a5a5a5;
+    font-size: 12px;
+}
+
+.banner-right dd a{
+    /* 文字垂直居中 */
+    height: 38px;
+    line-height: 38px;
+
+    display: block;
+    border:1px solid #00a3fe;
+
+    /* 文字宽度居中 */
+    text-align: center;
+
+    /* 文字颜色 */
+    color: #00a3fe;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.banner-right dd a:hover{
+    /* 设悬浮背景颜色,但是字体也要变,明显一点 */
+    background-color: #00a3fe;
+
+    color: #ffffff;
+}
+
+.circle{
+    width: 180px;
+    height: 22px;
+    background-color: rgba(0, 0, 0, 0);
+
+    /* 子绝父相 */
+    position: absolute;
+
+    /* 子元素显示的大小和位置 */
+    bottom: 10px;
+
+    /* 相对父元素的位置 */
+    left: 500px;
+    /* 相对自己位置的水平居中算法,宽度的一半 */
+    /* margin-left: -90px; */
+}
+
+.circle li{
+    float: left;
+
+    width: 12px;
+    height: 12px;
+
+    margin: 3px 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+
+    /* 变成圆 */
+    border-radius: 50%;
+}
+.circle .current{
+    border-radius: 6px;
+    width: 18px;
+    background-color: #fff;
+}
+
+/* banner样式结束 */
+
+
+/* 精品推荐--开始 */
+.insert {
+    background-color:#ffffff;
+    /* 长度垂直居中 */
+    height: 60px;
+    line-height: 60px;
+
+    /* insert容器上方外边距8px,底部外边距8px */
+    margin-top: 8px ;
+    margin-bottom: 8px;
+    /* margin:8px 0; */
+
+    /* 盒子阴影box-shadow:水平距离 垂直距离 模糊距离 颜色 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.insert a{
+    /* 上下为0,左右为30px */
+    padding:0 30px;
+
+    /* 每个a标签的右边界实线 */
+    border-right: 1px solid #ccc;
+}
+
+.insert a:hover{
+    color: #00a3fe;
+}
+
+.insert a:first-child, .insert a:last-child{
+    color: #00a3fe;
+}
+
+.insert a:last-child{
+    border: 0;
+    font-size: small;
+    float: right;
+}
+/* 精品推荐--结束 */
+
+
+/* 精品推荐五层_开始 */
+.command{
+    position: relative;
+    background-color:#f4f5f7;
+    height:1980px;
+
+    margin-top: 20px;
+}
+
+.cebianlan {
+    position: absolute;
+    left: -215px;
+    top: 210px;
+
+    width: 180px;
+    height: 506px;
+    background-color: #fff;
+}
+
+.cebianlan li a {
+    font-size: 14px;
+    padding: 0 25px;
+
+    /* a转换为块元素 */
+    display: block;
+    height: 45px;
+    line-height: 45px; /*单行行高有了*/
+}
+
+.secondli a{
+    color: #00a3fe;
+}
+
+.cebianlan ul li a:hover {
+    color: #00a3fe;
+}
+
+/* <!-- 第一层开始 --> */
+.product-head{
+    height: 35px;
+    background-color: #f4f5f7;
+}
+
+.product-head h5{
+    float: left;
+    color: #454648;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-head .span1 {
+    float: right;
+    width: 100px;
+    margin-top: 3px;
+    
+    font-size: 12px;
+    color: #a9aaac;
+}
+
+.product-body ul li{
+    width: 185px;
+    height: 249px;
+    background-color: #ffffff;
+
+    /* 溢出的图片隐藏 */
+    overflow: hidden;
+
+    /* 阴影:水平 垂直 模糊 颜色 */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+
+    /* 好多个图,需要浮动 */
+    float: left;
+
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    position: relative;
+}
+
+.hot {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 2px;
+    right: 0;
+}
+
+.new {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 2px;
+    right: 0;
+}
+
+/* 当个数为5的倍数,外边距为0 */
+.product-body ul li:nth-child(5n){
+    margin-right: 0;
+    /* margin-top: 15px; */
+}
+
+.product-body li h6,
+.product-body li p{
+    padding: 0 20px 0 24px;
+    font-size: 12px;
+}
+
+.product-body li h6{
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    
+    margin-bottom: 10px;
+}
+
+.product-body li p span{
+    color: #ff7c2d;
+}
+/* <!-- 第一层结束 --> */
+
+.product-body li p{
+    color: #999;
+    font-size: 12px;
+}
+
+/* <!-- 第二层开始 --> */
+.bianchengrumen-head{
+    height: 35px;
+    background-color: #f4f5f7;
+
+    margin-top: 15px;  
+    margin-bottom: 8px;
+}
+
+.bianchengrumen-head h5{
+    float: left;
+    color: #454648;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 260px;
+}
+
+.bianchengrumen-head div ul li a{
+    width: 50px;
+    float: left;
+    color: #848587;
+    font-size: 14px;
+    /* 上下为0,左右为30px */
+    padding:0 ;  
+    margin-right: 50px; 
+}
+
+.biancheng a:first-child{
+    color: #00a3fe;
+}
+
+.bianchengrumen-head ul li a:hover{
+    color: #00a3fe;
+}
+
+.bianchengrumen-head .span2{
+    float: right;
+    width: 100px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #a9aaac;
+}
+
+.bianchengrumen-body{
+    overflow: hidden;
+    height: 320px;
+    background-color:#f4f5f7;
+}
+
+.bianchengleft{
+    float: left;
+    margin-right: 15px;
+}
+
+.bianchengleft img{
+    width: 185px;
+}
+
+.bianchengright{
+    float: right;
+}
+
+.bianchengright .bcrtop img{
+    width: 800px;
+    height: 95px;
+    margin-bottom: 15px;
+}
+
+.bianchengright .bcrbottom ul li{
+    float: left;
+    width: 185px;
+    height: 320px;
+    background-color: #ffffff;
+    margin-right: 15px;
+}
+
+.bcrbottom li h6{
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    
+    margin-bottom: 10px;
+}
+
+.bcrbottom li h6,
+.bcrbottom li p{
+    padding: 0 20px 0 24px;
+    font-size: 14px;
+}
+
+.bcrbottom li p span{
+    color: #ff7c2d;
+}
+
+.bcrbottom li p{
+    color: #999;
+    font-size: 12px;
+}
+/* <!-- 第二层结束 --> */
+
+
+/* <!-- 第三层开始 --> */
+.shujufenxi-head{
+    height: 35px;
+    background-color: #f4f5f7;
+
+    margin-top: 25px;  
+    margin-bottom: 8px;
+}
+
+.shujufenxi-head h5{
+    float: left;
+    color: #454648;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 260px;
+}
+
+.shujufenxi-head div ul li a{
+    width: 50px;
+    float: left;
+    color: #848587;
+    font-size: 14px;
+    /* 上下为0,左右为30px */
+    padding:0 ;  
+    margin-right: 50px; 
+}
+
+.shujufenxi-head ul li:first-child{
+    color: #00a3fe;
+}
+
+.shujufenxi-head ul li a:hover{
+    color: #00a3fe;
+}
+
+.shujufenxi-head .span3{
+    float: right;
+    width: 100px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #a9aaac;
+}
+
+.shujufenxi-body{
+    overflow: hidden;
+    height: 320px;
+    background-color:#f4f5f7;
+}
+
+.shujufenxileft{
+    float: left;
+    margin-right: 15px;
+}
+
+.shujufenxileft img{
+    width: 185px;
+}
+
+.shujufenxiright{
+    float: right;
+}
+
+.shujufenxiright .sjfxtop img{
+    width: 800px;
+    height: 95px;
+    margin-bottom: 15px;
+}
+
+.shujufenxiright .sjfxbottom ul li{
+    float: left;
+    width: 185px;
+    height: 320px;
+    background-color: #ffffff;
+    margin-right: 15px;
+}
+
+.sjfxbottom li h6{
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    
+    margin-bottom: 10px;
+}
+
+.sjfxbottom li h6,
+.sjfxbottom li p{
+    padding: 0 20px 0 24px;
+    font-size: 14px;
+}
+
+.sjfxbottom li p span{
+    color: #ff7c2d;
+}
+
+.sjfxbottom li p{
+    color: #999;
+    font-size: 12px;
+}
+/* <!-- 第三层结束 --> */
+
+/* <!-- 第四层开始 --> */
+.jiqixuexi-head{
+    height: 35px;
+    background-color: #f4f5f7;
+
+    margin-top: 25px;  
+    margin-bottom: 8px;
+}
+
+.jiqixuexi-head h5{
+    float: left;
+    color: #454648;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 260px;
+}
+
+.jiqixuexi-head div ul li a{
+    width: 50px;
+    float: left;
+    color: #848587;
+    font-size: 14px;
+    /* 上下为0,左右为30px */
+    padding:0 ;  
+    margin-right: 50px; 
+}
+
+.jiqixuexi-head ul li:first-child{
+    color: #00a3fe;
+}
+
+.jiqixuexi-head ul li a:hover{
+    color: #00a3fe;
+}
+
+.jiqixuexi-head .span4{
+    float: right;
+    width: 100px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #a9aaac;
+}
+
+.jiqixuexi-body{
+    overflow: hidden;
+    height: 260px;
+    background-color:#f4f5f7;
+}
+
+.jiqixuexi-body ul li{
+    float: left;
+    margin-right: 15px;
+    width: 185px;
+    height: 249px;
+    background-color: #ffffff;
+}
+
+.jiqixuexi-body li h6{
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    
+    margin-bottom: 10px;
+}
+
+.jiqixuexi-body li h6,
+.jiqixuexi-body li p{
+    padding: 0 20px 0 24px;
+    font-size: 14px;
+}
+
+.jiqixuexi-body li p span{
+    color: #ff7c2d;
+}
+
+.jiqixuexi-body li p{
+    color: #999;
+    font-size: 12px;
+}
+/* <!-- 第四层结束 --> */
+
+/* <!-- 第五层开始 --> */
+.qianduankaifa-head{
+    height: 35px;
+    background-color: #f4f5f7;
+
+    margin-top: 15px;  
+    margin-bottom: 8px;
+}
+
+.qianduankaifa-head h5{
+    float: left;
+    color: #454648;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 260px;
+}
+
+.qianduankaifa-head div ul li a{
+    width: 50px;
+    float: left;
+    color: #848587;
+    font-size: 14px;
+    /* 上下为0,左右为30px */
+    padding:0 ;  
+    margin-right: 50px; 
+}
+
+.qianduankaifa-head ul li:first-child{
+    color: #00a3fe;
+}
+
+.qianduankaifa-head ul li a:hover{
+    color: #00a3fe;
+}
+
+.qianduankaifa-head .span5{
+    float: right;
+    width: 100px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #a9aaac;
+}
+
+.qianduankaifa-body{
+    overflow: hidden;
+    height: 290px;
+    background-color:#f4f5f7;
+}
+
+.qianduankaifa-body ul li{
+    float: left;
+    margin-right: 15px;
+    width: 185px;
+    height: 249px;
+    background-color: #ffffff;
+}
+
+.qianduankaifa-body li h6{
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    
+    margin-bottom: 10px;
+}
+
+.qianduankaifa-body li h6,
+.qianduankaifa-body li p{
+    padding: 0 20px 0 24px;
+    font-size: 14px;
+}
+
+.qianduankaifa-body li p span{
+    color: #ff7c2d;
+}
+
+.qianduankaifa-body li p{
+    color: #999;
+    font-size: 12px;
+}
+/* <!-- 第五层结束 --> */
+/* 精品推荐五层_结束 */
+
+
+/* 底部开始 */
+footer{
+    background-color:#fff;
+    width: 100%;
+    height: 310px;
+    margin-top: 10px;
+}
+
+.footer-in{
+    padding-top: 30px;
+}
+
+.footer-left{
+    float: left;
+}
+
+.footer-in .footer-left p{
+    color: #696969;
+    font-size: 14px;
+}
+
+.footer-in .footer-left img{
+    margin-bottom: 23px;
+}
+
+.footer-in .footer-left a{
+    width: 130px;
+
+    /* 文字垂直居中 */
+    height: 38px;
+    line-height: 38px;
+
+    /* 文字水平居中 */
+    text-align: center;
+
+    color: #00a3fe;
+    font-weight: 500;
+
+    display: block;
+    border: 1px solid #00a3fe;
+
+    margin-top: 15px;
+}
+
+.footer-in .footer-left a:hover{
+    color: #fff;
+    background-color: #00a3fe;
+}
+
+.footer-in .footer-right{
+    float: right;  
+}
+
+.footer-right dl{
+    /* 在footer-right向右浮动时,内部小dl向左浮动 */
+    float: left;
+
+    /* 每个dl的宽度 */
+    width: 120px;
+}
+
+.footer-right dt{
+    color: #747474;
+    font-size: 16px;
+    height: 35px;
+}
+
+.footer-right dd{
+    color: #323232;
+    font-size: 12px;
+    height: 20px;
+}
+
+.footer-right dd a:hover{
+    color: #00a3fe;
+    text-decoration: underline;
+}
+/* 底部结束 */
+
+
+
+

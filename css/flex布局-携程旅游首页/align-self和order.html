@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width: 60%;
+            height: 300px;
+            background-color: pink;
+            display: flex;
+
+            /* 三个盒子沿主轴底侧对齐 */
+            /* align-items: flex-end; */
+
+            /* 现在想让2号盒子下来，1 3号盒子顶部对齐 */
+            /* section div:nth-child(2) {} */
+        }
+
+        section div:nth-child(1),
+        section div:nth-child(3) {
+            width: 10%;
+            height: 100px;
+            background-color: red;
+        }
+
+        section div:nth-child(2) {
+            flex: 2;
+            align-self: flex-end;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </section>
+
+</body>
+
+</html>

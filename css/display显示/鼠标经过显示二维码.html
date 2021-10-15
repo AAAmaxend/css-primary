@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标经过显示二维码</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            line-height: 100px;
+            text-align: center;
+
+            margin: 100px auto;
+
+            /* 子绝父相 */
+            position: relative;
+
+        }
+
+        div img {
+            position: absolute;
+            left: 100px;
+            top: 0;
+
+            /* 隐藏二维码,位置不见了,但实际还存在 */
+            display: none;
+        }
+
+        div:hover img {
+            /* div:hover img里面的图片隐藏 */
+            /* 显示元素 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        扫二维码
+        <img src="../付腾达/作业img/index.png" alt="">
+    </div>
+</body>
+
+</html>

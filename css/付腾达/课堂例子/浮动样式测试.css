@@ -1,0 +1,91 @@
+/* 通用选择器* */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.one{
+    width: 100px;
+    height: 80px;
+    background-color: orange;
+    float: left;
+}
+
+.two{
+    width: 200px;
+    height: 150px;
+    background-color: blue;
+    float: left;
+}
+
+.three{
+    width: 150px;
+    height: 100px;
+    background-color: pink;
+    float: right;
+}
+
+
+.four{
+    width: 150px;
+    height: 100px;
+    background-color: green;
+    clear: both;
+}
+
+.container{
+    background-color: gray;
+}
+
+/* 和另外加一个div的效果是一样的
+.选择器名字::after{}
+
+.container::after{
+    content: '';
+    display: block;
+    clear: both;
+} */
+.container::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container2{
+    background-color: #eee;
+    margin: 50px auto;
+    width: 90%;
+    /* 因为在父元素里，布局因此竖状平均分 */
+    display: flex;
+
+    /* 自动调整超出容器的部分 */
+    flex-wrap: wrap;
+
+    /* 父元素它里面的文字对齐 */
+    justify-content: space-around;
+
+    /* 在父元素中文字以开头还是末尾对齐，也在可以其他选择器单独align-self设置 */
+    align-items: flex-start;
+}
+
+.aaa{
+    width: 150px;
+
+    /* 空隔相对比例大小 */
+    /* flex-grow: 3; */
+}
+
+.bbb{
+    width: 200px;
+}
+
+.ccc{
+    width: 300px;
+}
+
+
+
+
+

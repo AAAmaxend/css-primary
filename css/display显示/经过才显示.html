@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经过才显示</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            /* 字长度居中 */
+            line-height: 200px;
+            background-color: pink;
+
+            /* 字宽度居中 */
+            text-align: center;
+
+            /* margin: 0 auto;自动向上居中 */
+            margin: 100px auto;
+
+            /* div是父元素,子绝父相 */
+            position: relative;
+
+        }
+
+        div img {
+            /* div 的img 是子元素 */
+            position: absolute;
+
+            /* 要隐藏的 */
+            display: none;
+
+            left: 200px;
+            top: 0;
+        }
+
+        div:hover img {
+            /* display显示的时候,使用块级元素转变 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        点击
+        <img src="../付腾达/作业img/index.png" alt="">
+    </div>
+</body>
+
+</html>

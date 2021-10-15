@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .row div {
+            background-color: lawngreen;
+            height: 70px;
+        }
+
+        .row div:nth-child(3) {
+            background-color: pink;
+        }
+
+        span {
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <!-- 只在大屏幕中显示 -->
+                <span class="visible-lg">我会显示哦</span>
+            </div>
+            <div class="col-xs-3">2</div>
+
+            <!-- 在小屏幕、超小屏幕都隐藏 -->
+            <div class="col-xs-3 hidden-sm hidden-xs">魔力</div>
+            <div class="col-xs-3">4</div>
+        </div>
+    </div>
+</body>
+
+</html>

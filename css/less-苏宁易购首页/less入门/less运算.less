@@ -1,0 +1,21 @@
+@border:5px + 5;  //less的加法运算
+@baseFont:50px;
+html{
+    font-size: @baseFont;
+}
+div{
+    width: 200px * 2;
+    height: 200px;
+    border: @border solid red;
+    background-color: #666666 - #222222;
+}
+img{
+    // width: (82/50)rem;
+    // height: (82/50)rem;
+
+    width: 82rem / @baseFont;
+    height: 82rem / @baseFont;
+}
+
+// 1、我们运算符的左右两侧必须敲一个空格隔开
+// 2、两个数参与运算 如果只有一个数 有单位，则最后结果以这个单位为准3、两个都有单位？？？

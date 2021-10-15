@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        子选择器
+    <style>
+        body>p{
+            background: crimson;
+        }
+    </style>
+     后代选择器
+    <style>
+        body p{
+            color: blue;
+            background: antiquewhite;
+        }
+    </style>
+
+    兄弟选择器
+    <style>
+        .active+p{
+            background: aqua;
+        }
+    </style>
+-->
+<!--    通用选择器-->
+    <style>
+        .active~p{
+            background: deeppink;
+        }
+    </style>
+
+</head>
+<body>
+    <p>Zone</p>
+    <p class="active">One</p>
+    <p>Two</p>
+    <p>Three</p>
+    <ul>
+        <li><p>Three.1</p></li>
+        <li><p>Three.2</p></li>
+        <li><p>Three.3</p></li>
+    </ul>
+    <p class="active">
+        Four
+    </p>
+
+</body>
+</html>

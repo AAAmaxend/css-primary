@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证AAA</title>
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        .left {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 验证要求:
+        1.姓名不能为空,且不能包含数字
+        2.密码不能为空,且不能少于8位,且两次输入的密码必须一致 -->
+    <form method="post" name="xujiafang_form" id="xujiafang_form">
+        <table id="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="left" id="email">您的Email:</td>
+                <td>
+                    <input id="email" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">输入密码:</td>
+                <td>
+                    <input type="password" id="pwd">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">再输入一遍密码:</td>
+                <td>
+                    <input type="password" id="repwd">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">您的姓名:</td>
+                <td>
+                    <input type="text" id="user">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">性别:</td>
+                <td>
+                    <input type="radio" name="sex" id="男">男
+                    <input type="radio" name="sex" id="女">女
+                </td>
+            </tr>
+            <tr>
+                <td class="left">出生日期:</td>
+                <td>
+                    <select>
+                        <option>1998</option>
+                    </select>年
+                    <select>
+                        <option>1</option>
+                    </select>月
+                    <select>
+                        <option>12</option>
+                    </select>日
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="注册" id="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script>
+        $("#btn").click(function () {
+            //3.对email的限制
+            //3.1 email不能为空
+            var email = $("#email").val();
+            if (email == "") {
+                alert("Email不能为空!");
+            }
+            var emailRegex = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (emailRegex.test(email)) {
+                alert("请输入有效的email!");
+                emailRegex.focus();
+                return false;
+            }
+
+            // 1.姓名的限制操作:1.1姓名不能为空
+            var username = $("#user").val();
+            if (username.length == 0) {
+                alert("姓名不能为空");
+                return false;
+            }
+
+            //1.2:姓名不能包含数字
+            for (var i = 0; i < username.length; i++) {  //遍历每个字符串或者数字
+                var isnum = username.substring(i, i + 1);  //获取每个字符或者数字
+                if (isNaN(isnum) == false) {  //判断获取到的是数字不
+                    alert("用户名不能输入数字!");  //是的话,弹出警告
+                    return false;       //返回错误布尔值
+                }
+            }
+
+            // 2.对密码的限制
+            // 2.1密码不能为空
+            var pwd = $("#pwd").val();
+            if (pwd == "") {
+                alert("密码不能为空!");
+                return false;
+            }
+            // 2.2密码不得少于8位
+            if (pwd.length < 6) {
+                alert("密码不能少于6位!");
+                return false;
+            }
+            // 2.3两次输入的密码必须相同
+            var repwd = $("#repwd").val();
+            if (repwd !== pwd) {
+                alert("两次输入的密码不一致!");
+                return false;
+            }
+
+
+
+
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
